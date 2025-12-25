@@ -1,0 +1,51 @@
+<div class="container">
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>Input Teacher Information</h2>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <label for="fname">Name</label>
+  <input type="text" id="name" name="name" placeholder="Your name..">
+
+  <label for="fname">Email</label>
+  <input type="text" id="email" name="email" placeholder="Your Email..">
+
+  <label for="fname">Subject</label>
+  <input type="text" id="contact" name="subject" placeholder="Your Subject..">
+
+  <label for="fname">Department</label>
+  <input type="text" id="age" name="department" placeholder="Your Department..">
+
+  <label for="fname">City</label>
+  <input type="text" id="city" name="city" placeholder="Your City..">
+  
+  <input type="submit" value="Submit">
+</form>
+
+
+<h1>A Teacher Table</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Subject</th>
+    <th>Department</th>
+    <th>City</th>
+  </tr>
+  {% for row in data %}
+  <tr>
+    <td>{{row.Name}}</td>
+    <td>{{row.Email}}</td>
+    <td>{{row.Subject}}</td>
+    <td>{{row.Department}}</td>
+    <td>{{row.City}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock body %}
+</div>
