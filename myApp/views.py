@@ -39,6 +39,6 @@ def TeacherPage(request):
             City=city_name,
         )
         teacher.save()
-
+    #Show all teacher data
     teacherdata=TeacherModel.objects.all()
     return render(request, 'teacher.html', {'data':teacherdata})
